@@ -1,8 +1,7 @@
-function [ output ] = gaus_blur( input )
+function [ output ] = gaus_blur( img )
 %GAUS Summary of this function goes here
 %   Detailed explanation goes here
 
-img=im2double(input);
 output=zeros(size(img,1)-2,size(img,2)-2);
 a_=0.110741;
 b_=0.111296;
@@ -18,7 +17,6 @@ for row= 2:size(img,1)-1
   end
 end
 
-output=mat2gray(output);
 
 end
 
