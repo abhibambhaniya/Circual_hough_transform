@@ -5,11 +5,8 @@ b=rgb2gray(a);
 figure;imshow(b);
 
 c=gaus_blur(b);
-for i=1:10
-    c=gaus_blur(c);
-end    
-figure;imshow(c);
+figure;imshow(c,[0,255]);
 
 d=sobel(c);
-figure;imshow(d);
+figure;imshow(d,[0,255]);
 
