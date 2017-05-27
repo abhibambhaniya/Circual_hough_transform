@@ -14,6 +14,8 @@ for row= 1:size(img,1)
   end
 end
 
+output=mat2gray(output);
+output=im2uint8(output);
 
 end
 

@@ -7,11 +7,11 @@ M1=zeros(3,3);    %% matrix for a element with its neighbour
 output1=zeros(3,3);  %% temporary matrix storing M1*x_mask
 output2=zeros(3,3);  %% temporary matrix storing M1*y_mask
 
-x_mask=[-1 -2 -1 ;
+y_mask=[-1 -2 -1 ;
          0  0  0 ;
          1  2  1 ];
      
-y_mask=[-1 0 1;
+x_mask=[-1 0 1;
         -2 0 2 ;
         -1 0 1 ];
     
@@ -46,6 +46,10 @@ for row= 1:size(img,1)
     output(row,col)=sqrt(Gx.^2+Gy.^2);
   end
 end
+ 
+output=mat2gray(output);
+output=im2uint8(output);
+
 
 end
 

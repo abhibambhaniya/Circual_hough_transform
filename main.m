@@ -7,6 +7,7 @@ figure;imshow(b);
 c=gaus_blur(b);
 figure;imshow(c,[0,255]);
 
-d=sobel(c);
+[d mag theta GX GY]=canny(c);
 figure;imshow(d,[0,255]);
+
 
