@@ -8,7 +8,7 @@ ac=zeros(2,(size(img,1)*size(img,2)));
 for row= 2:size(img,1)-1
   for col=2:size(img,2)-1
 
-  if(img(row,col)>=80)
+  if(img(row,col)>=180)
       output(row,col)=255;
       count=count+1;
       ac(1,count)=row;
@@ -24,7 +24,7 @@ end
   if (ac(1,i)>0)  
    for row2= 1:3
     for col2=1:3
-     if all([output(ac(1,i)+row2-2,ac(2,i)+col2-2)>40,output(ac(1,i)+row2-2,ac(2,i)+col2-2)<80]) 
+     if all([output(ac(1,i)+row2-2,ac(2,i)+col2-2)>80,output(ac(1,i)+row2-2,ac(2,i)+col2-2)<180]) 
       output(ac(1,i)+row2-2,ac(2,i)+col2-2)=255;
       count=count+1;
       ac(1,count)=ac(1,i)+row2-2;

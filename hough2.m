@@ -1,4 +1,4 @@
-function [ output ] = hough2( img )
+function [ output, HS ] = hough2( img )
 %UNTITLED Summary of this function goes here
 %   Detailed explanation goes here
 
@@ -9,7 +9,7 @@ function [ output ] = hough2( img )
 %  theta(i)=theta(i-1)+0.5
 % end
 
-rmax=ceil((size(img,1)^2+size(img,1)^2)^0.5);
+rmax=ceil((size(img,1)^2+size(img,2)^2)^0.5);
 % R=zeros(1,2*rmax+1);
 % R(1)=-rmax;
 % for i=2:360

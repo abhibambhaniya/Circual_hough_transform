@@ -12,11 +12,13 @@ for row= 1:size(img,1)
   for col=1:size(img,2)
    if(img(row,col)>thres)
       max=img(row,col);
-      for row2=1:5
-        for col2=1:5
-        if all([(row+row2-3)>0 , (col+col2-3)>0 , (row+row2-3)<size(img,1) ,(col+col2-3)<size(img,2)] )
-          if(img(row+row2-3,col+col2-3)>max)
+      for row2=1:9
+        for col2=1:9
+        if all([(row+row2-5)>0 , (col+col2-5)>0 , (row+row2-5)<size(img,1) ,(col+col2-5)<size(img,2),col2~=5,row2~=5] )
+          if(img(row+row2-5,col+col2-5)>max)
            max=0;
+%           else
+%            img(row+row2-5,col+col2-5)=0;   
           end
         end
         end
@@ -24,7 +26,7 @@ for row= 1:size(img,1)
      if(max~=0)
       output(row,col)=255;
       count=count+1;
-      H(1,count)= row/306*pi;
+      H(1,count)= row/360*pi;
       H(2,count)= col-(rmax+1);
      end 
    end    
