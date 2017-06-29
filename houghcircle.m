@@ -3,7 +3,7 @@ function [ output ] = houghcircle( img )
 %   Detailed explanation goes here  59.17 61.51 45
 
 rmin=23;
-rmax=60/2;
+rmax=30;
 % r=45;
 HSC =zeros(size(img,1),size(img,2));   %,rmax-rmin+1
 for row=1:size(img,1)

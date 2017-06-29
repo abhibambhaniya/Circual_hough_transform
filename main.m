@@ -7,15 +7,16 @@ b=rgb2gray(a);
 c=gaus_blur(b);
 % figure;imshow(c,[0,255]);
 
-[d mag theta GX GY]=canny(c);
- figure;imshow(d,[0,255]);
+% [d mag theta GX GY]=canny(c);
+%  figure;imshow(d,[0,255]);
 
+d=sobel(c);
 
-[e, HS]=hough2(d);
+e=houghcircle(d);
  figure;imshow(e);
 
-% [f,H]=thresholdmax(e,120);
-% figure;imshow(f);
+[f,H]=thresholdmax(e,180);
+figure;imshow(f);
 % 
 % figure;imshow(d);
 % hold on;

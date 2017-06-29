@@ -1,4 +1,4 @@
-function [ output, HS ] = hough2( img )
+function [ output ] = hough2( img )
 %UNTITLED Summary of this function goes here
 %   Detailed explanation goes here
 

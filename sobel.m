@@ -47,6 +47,16 @@ for row= 1:size(img,1)
   end
 end
  
+
+for row= 1:size(img,1)
+  for col=1:size(img,2)
+  if(output(row,col)>80)
+  output(row,col)=255;
+  else
+  output(row,col)=0;    
+  end
+end
+
 output=mat2gray(output);
 output=im2uint8(output);
 
