@@ -1,23 +1,24 @@
 a=imread('coins2.jpg');
-% figure;imshow(a);
+%  figure;imshow(a);
 
 b=rgb2gray(a);
-% figure;imshow(b);
+ figure;imshow(b);
 
 c=gaus_blur(b);
-% figure;imshow(c,[0,255]);
+  figure;imshow(c,[0,255]);
 
-% [d mag theta GX GY]=canny(c);
-%  figure;imshow(d,[0,255]);
+[d mag theta GX GY]=canny(c);
+figure;imshow(d,[0,255]);
 
-d=sobel(c);
+%  d=sobel(c);
+%  figure;imshow(d);
 
-e=houghcircle(d);
- figure;imshow(e);
+[HSC, HSC2]=houghcircle(d);
+figure;imshow(HSC2);
 
-[f,H]=thresholdmax(e,180);
-figure;imshow(f);
-% 
-% figure;imshow(d);
-% hold on;
-% plotline(H);
+[g,H]=thresholdmax(HSC2,160);
+ figure;imshow(g);
+
+ figure;imshow(a);
+[I]=threshold3(HSC,H);
+ plotcircle(I);
